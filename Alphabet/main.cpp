@@ -19,19 +19,24 @@ int main() {
     std::string str;
     cin >> str;
 
-    vector<int> lis(str.size(), 1);
-    int longest = 0;
-    for (int i = str.size() - 1; i >= 0; i--) {
-        for (int j = i + 1; j < str.size(); j++) {
-            if (str[j] > str[i]) {
-				lis[i] = max(lis[i], lis[j] + 1);
-			}
+    // Get longest increasing subsequence (lis)
+    vector<int> lis;
+    for (const char& c : str) {
+        // Find first element in lis that's bigger than c
+        auto it = lower_bound(lis.begin(), lis.end(), c);
+
+        // If it doesn't exist, c is the biggest so add c to end of lis
+        if (it == lis.end()) {
+            lis.push_back(c);
+        }
+        // Otherwise, replace it with c
+        else {
+			*it = c;
 		}
-        longest = max(lis[i], longest);
     }
 
     // Output
-    printf("%i", 26 - longest);
+    cout << 26 - lis.size();
 
     fclose(stdin);
     return 0;
