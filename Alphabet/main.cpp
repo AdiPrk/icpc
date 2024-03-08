@@ -1,3 +1,4 @@
+#pragma warning(disable : 6031) // annoying scanf warning
 #define _CRT_SECURE_NO_WARNINGS
 
 #include <iostream>
@@ -13,8 +14,10 @@ using namespace std;
 
 int main() {
     // Input
-    std::string str = "aiemckgobjfndlhp";
-    //cin >> str;
+    freopen("../input.txt", "r", stdin);
+
+    std::string str;
+    cin >> str;
 
     vector<int> lis(str.size(), 1);
     int longest = 0;
@@ -30,5 +33,6 @@ int main() {
     // Output
     printf("%i", 26 - longest);
 
+    fclose(stdin);
     return 0;
 }

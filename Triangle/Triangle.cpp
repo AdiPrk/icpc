@@ -1,3 +1,4 @@
+#pragma warning(disable : 6031) // annoying scanf warning
 #define _CRT_SECURE_NO_WARNINGS
 
 #include <algorithm>
@@ -6,6 +7,8 @@ using namespace std;
 
 int main() {
     // Input
+    freopen("../input.txt", "r", stdin);
+
     int a, b, c, d, e, f;
     scanf("%d%d%d%d%d%d", &a, &b, &c, &d, &e, &f);
 
@@ -20,5 +23,6 @@ int main() {
     // print yes if lengths are equal and it's a right triangle
     (a==d && b==e && c==f && a*a + b*b == c*c) ? printf("YES") : printf("NO");
 
+    fclose(stdin);
     return 0;
 }

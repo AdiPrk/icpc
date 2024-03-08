@@ -28,7 +28,7 @@ void findEqualSums(int leftSum, int rightSum, int i) {
 
 int main() {
     // Input
-    freopen("../x64/Release/input.txt", "r", stdin);
+    freopen("../input.txt", "r", stdin);
 
     int n, m;
     scanf("%d%d", &n, &m);

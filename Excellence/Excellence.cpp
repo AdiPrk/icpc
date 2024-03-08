@@ -1,3 +1,6 @@
+#pragma warning(disable : 6031) // annoying scanf warning
+#define _CRT_SECURE_NO_WARNINGS
+
 #include <iostream>
 #include <vector>
 #include <queue>
@@ -10,6 +13,8 @@
 using namespace std;
 
 int main() {
+    freopen("../input.txt", "r", stdin);
+
     // apparently speeds up io operations //
     ios::sync_with_stdio(false);
     cin.tie(NULL);
@@ -38,5 +43,6 @@ int main() {
     // Output
     cout << minScore << endl;
 
+    fclose(stdin);
     return 0;
 }

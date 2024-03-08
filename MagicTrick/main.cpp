@@ -1,3 +1,6 @@
+#pragma warning(disable : 6031) // annoying scanf warning
+#define _CRT_SECURE_NO_WARNINGS
+
 #include <iostream>
 #include <vector>
 
@@ -14,6 +17,8 @@ struct Action {
 };
 
 int main() {
+    freopen("../input.txt", "r", stdin);
+
     // apparently speeds up io operations //
     std::ios::sync_with_stdio(false);
     std::cin.tie(NULL);
@@ -79,5 +84,6 @@ int main() {
     // Output the count of numbers that result in a negative number or a fraction
     std::cout << count;
 
+    fclose(stdin);
     return 0;
 }

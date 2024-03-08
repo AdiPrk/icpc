@@ -1,3 +1,4 @@
+#pragma warning(disable : 6031) // annoying scanf warning
 #define _CRT_SECURE_NO_WARNINGS
 
 #include <iostream>
@@ -15,6 +16,8 @@ struct Wave {
 
 int main() {
     // Input
+    freopen("../input.txt", "r", stdin);
+
     int n;
     scanf("%d", &n);
     std::vector<Wave> waves(n);
@@ -47,5 +50,6 @@ int main() {
     // Output
     printf("%d", scores[0]);
 
+    fclose(stdin);
     return 0;
 }

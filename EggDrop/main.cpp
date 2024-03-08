@@ -1,7 +1,12 @@
+#pragma warning(disable : 6031) // annoying scanf warning
+#define _CRT_SECURE_NO_WARNINGS
+
 #include <iostream>
 #include <algorithm>
 
 int main() {
+    freopen("../input.txt", "r", stdin);
+
     std::ios::sync_with_stdio(false);
     std::cin.tie(NULL);
 
@@ -24,5 +29,6 @@ int main() {
     // and highest floor it's (possibly) safe on
     std::cout << (highestSafe + 1) << " " << (lowestBreak - 1) << std::endl;
 
+    fclose(stdin);
     return 0;
 }

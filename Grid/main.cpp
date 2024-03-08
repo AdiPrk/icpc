@@ -1,3 +1,6 @@
+#pragma warning(disable : 6031) // annoying scanf warning
+#define _CRT_SECURE_NO_WARNINGS
+
 #include <iostream>
 #include <vector>
 #include <queue>
@@ -52,6 +55,8 @@ int BFS(const vector<vector<int>>& grid, int m, int n) {
 }
 
 int main() {
+    freopen("../input.txt", "r", stdin);
+
     // apparently speeds up io operations //
     ios::sync_with_stdio(false);
     cin.tie(NULL);
@@ -82,5 +87,6 @@ int main() {
         cout << result << endl;
     }
 
+    fclose(stdin);
     return 0;
 }
