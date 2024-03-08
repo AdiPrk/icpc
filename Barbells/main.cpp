@@ -12,6 +12,7 @@ vector<int> plates, barbells;
 set<int> equalSums, totalWeights;
 
 // Recursive function to find all possible equal sums of plates on both sides
+// it's O(3^n) and n <= 14 so max is 3^14 = 4782969
 void findEqualSums(int leftSum, int rightSum, int i) {
     if (i == plates.size()) {
         if (leftSum == rightSum) {

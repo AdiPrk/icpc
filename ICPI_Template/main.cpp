@@ -29,3 +29,16 @@ int main() {
 }
 
 #pragma warning(pop)
+
+/*
+For Timing:
+#include <chrono>
+
+// Before code
+auto start = std::chrono::high_resolution_clock::now();
+
+// After code
+auto stop = std::chrono::high_resolution_clock::now();
+auto duration = std::chrono::duration_cast<std::chrono::microseconds>(stop - start);
+std::cout << "Time: " << duration.count() << " microseconds" << std::endl;
+*/
